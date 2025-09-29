@@ -106,3 +106,21 @@ footer {
   .project img { width: 100%; }
   .contact-container { flex-direction: column; }
 }
+/* Navbar default */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none; /* hidden by default */
+  }
+
+  nav.active ul {
+    display: flex; /* show when toggled */
+  }
+}
