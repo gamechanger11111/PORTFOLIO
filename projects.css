@@ -1,0 +1,191 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #aaa;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.page-header p {
+  color: #aaa;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+/* Project Cards */
+.project-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  padding: 15px;
+  text-align: left;
+}
+
+.overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.overlay p {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 75vh;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.8);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-caption {
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.close,
+.nav {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+}
+
+.nav.prev {
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.nav.next {
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  .project-card img {
+    height: 200px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-card img {
+    height: 180px;
+  }
+}
